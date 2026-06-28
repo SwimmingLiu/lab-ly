@@ -185,11 +185,11 @@ const translations = {
         'team.students.longWei.description': '心电信号分类',
         'team.students.yongjieLiu.name': '刘永杰',
         'team.students.yongjieLiu.description': '肺结节检测与分割',
-        'publications.dyscorediff.authors': 'Jiaqi Hu, 李杨',
-        'publications.ecgCnnTransformer.authors': 'Long Wei, 李杨',
-        'publications.lmrt.authors': 'Xinmiao Zhu, 李杨',
-        'publications.hsgo.authors': 'Fangtao Song, 李杨, Mingfeng Jiang, Kaicheng Li, Jucheng Zhang, Yinlong Zhang, Zhibo Pang',
-        'publications.socrYolo.authors': 'Yongjie Liu, 李杨, Mingfeng Jiang, Shuchao Wang, Shitai Ye, Simon Walsh, Guang Yang'
+        'publications.dyscorediff.authors': '胡佳奇, 李杨',
+        'publications.ecgCnnTransformer.authors': '韦龙, 李杨',
+        'publications.lmrt.authors': '朱鑫淼, 李杨',
+        'publications.hsgo.authors': '宋方涛, 李杨, 蒋明峰, Kaicheng Li, Jucheng Zhang, Yinlong Zhang, Zhibo Pang',
+        'publications.socrYolo.authors': '刘永杰, 李杨, 蒋明峰, Shuchao Wang, Shitai Ye, Simon Walsh, Guang Yang'
     }
 };
 
