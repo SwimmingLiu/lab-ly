@@ -4,7 +4,11 @@
     "description": "Static",
     "author": "Your Name",
     "license": "ISC",
+    "scripts": {
+        "postinstall": "node scripts/patch-static-tailwind.mjs"
+    },
     "devDependencies": {
+        "@devdojo/static": "^1.1.0",
         "@tailwindcss/typography": "^0.5.10"
     }
 }
