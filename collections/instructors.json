@@ -1,14 +1,14 @@
 [
     {
-        "name" : "Mingfeng Jiang",
-        "description": "Leader & Medical Image Processing",
+        "name" : "蒋明峰",
+        "description": "医学图像处理与分析",
         "image" : "/assets/images/avatar_jmf.png",
         "url" : "http://yjsxt.zstu.edu.cn/open/dsfc/search/F56F7CC7AC943059E0530100007F4C41",
         "email": "m.jiang@zstu.edu.cn"
     },
     {
-        "name" : "Yang Li",
-        "description": "Pattern Recognition & Medical AI",
+        "name" : "李杨",
+        "description": "模式识别与医学人工智能",
         "image" : "/assets/images/avatar.png",
         "url" : "/about",
         "email": "yangli@zstu.edu.cn"

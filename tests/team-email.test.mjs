@@ -18,19 +18,19 @@ assert.match(projectCard, /aria-label="Email"/);
 assert.match(projectCard, /\{email\}/);
 
 const expectedEmails = new Map([
-  ["Mingfeng Jiang", "m.jiang@zstu.edu.cn"],
-  ["Yang Li", "yangli@zstu.edu.cn"],
-  ["JiaQi Hu", "hujiaqii@foxmail.com"],
-  ["ZiLong Fan", "15370843756@163.com"],
-  ["JunYi Zhang", "1798860756@qq.com"],
-  ["MingHao Jin", "m15397321136@163.com"],
-  ["LingYun Hong", "watchly@qq.com"],
-  ["JinKe Wang", "483091634@qq.com"],
-  ["Xinmiao Zhu", "1625012165@qq.com"],
-  ["Fangtao Song", "664604982@qq.com"],
-  ["Chenmiao Ruan", "275997493@qq.com"],
-  ["Long Wei", "1410124534@qq.com"],
-  ["Yongjie Liu", "SwimmingLiu@outlook.com"],
+  ["蒋明峰", "m.jiang@zstu.edu.cn"],
+  ["李杨", "yangli@zstu.edu.cn"],
+  ["张骏益", "1798860756@qq.com"],
+  ["胡佳奇", "hujiaqii@foxmail.com"],
+  ["范紫龙", "15370843756@163.com"],
+  ["王金科", "483091634@qq.com"],
+  ["洪凌云", "watchly@qq.com"],
+  ["金明浩", "m15397321136@163.com"],
+  ["刘永杰", "SwimmingLiu@outlook.com"],
+  ["韦龙", "1410124534@qq.com"],
+  ["宋方涛", "664604982@qq.com"],
+  ["朱鑫淼", "1625012165@qq.com"],
+  ["阮晨淼", "275997493@qq.com"],
 ]);
 
 for (const person of [...instructors, ...currentStudents, ...graduatedStudents]) {
