@@ -35,6 +35,9 @@ assert.match(publicationCard, /{publications.authors}/);
 assert.match(publicationCard, /data-i18n="\{publications\.authorsKey\}"/);
 assert.match(publicationCard, /sm:flex-row/);
 assert.match(publicationCard, /sm:w-/);
+assert.match(publicationCard, /z-20[^>]*group-hover:-translate-x-1[^>]*group-hover:-translate-y-1/s);
+assert.match(publicationCard, /z-10[^>]*group-hover:translate-x-1[^>]*group-hover:translate-y-1/s);
+assert.match(publicationCard, /relative z-30[^>]*group-hover:-translate-x-1[^>]*group-hover:-translate-y-1/s);
 
 assert.equal(publications.length, 5);
 
