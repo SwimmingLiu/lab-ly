@@ -49,6 +49,8 @@ assert.deepEqual(
 );
 assert.match(recruitmentLoop, /data-i18n="\{recruiment\.titleKey\}"/);
 assert.match(recruitmentLoop, /data-i18n-html="\{recruiment\.descriptionKey\}"/);
+assert.doesNotMatch(recruitmentLoop, /<p[^>]*data-i18n-html="\{recruiment\.descriptionKey\}"/);
+assert.match(recruitmentLoop, /<div[^>]*data-i18n-html="\{recruiment\.descriptionKey\}"/);
 
 assert.match(footer, /data-i18n="footer\.tagline"/);
 assert.match(card, /data-i18n="profile\.role"/);
