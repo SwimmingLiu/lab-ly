@@ -5,7 +5,7 @@
         <include 
             src="page-heading.html" 
             title="About Yang Li" 
-            description="Hello 👋 Here is some detailed introduction about Dr. Li Yang"
+            description="Hello 👋 Here is some detailed introduction about Dr. Yang Li"
         ></include>
         
         <!-- <img src="/assets/images/about.jpg" class="relative z-30 w-full my-5 rounded-xl" /> -->
@@ -23,7 +23,7 @@
         <!-- <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Career</h2>
         <p class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">After graduating college I landed an excellent job with Adobe. A few years later I worked for Google as a team lead on the design team. I am currently working for DevDojo and building some cool developer and designer tools.</p> -->
 
-        <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Experience</h2>
+        <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Funds</h2>
         <div class="px-5 py-10">
             <ForEach collection="experiences" as="experience" >
                 
@@ -32,9 +32,9 @@
                 <include 
                     src="about-experience.html" 
                     dates="{experience.dates}"
-                    role="{experience.role}"
+                    role="{experience.description}"
                     company="{experience.company}"
-                    description="{experience.description}"
+                    description="{experience.role}"
                     counts="{experience.count}"
                 ></include>
 

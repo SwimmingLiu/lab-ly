@@ -1,0 +1,17 @@
+<layout src="main.html" title="Publish">
+
+    <section class="relative z-20 max-w-4xl mx-auto mt-2 px-7 lg:px-0">
+        <include
+            src="page-heading.html"
+            title="Published Papers"
+            description=""
+        ></include>
+
+        <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
+            <ForEach collection="publications">
+                <include src="publication-card.html"></include>
+            </ForEach>
+        </div>
+    </section>
+
+</layout>

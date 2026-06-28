@@ -1,0 +1,84 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+const menu = JSON.parse(fs.readFileSync("collections/menu.json", "utf8"));
+const publishPage = fs.readFileSync("pages/publish.html", "utf8");
+const publicationCard = fs.readFileSync("includes/publication-card.html", "utf8");
+const publications = JSON.parse(
+  fs.readFileSync("collections/publications.json", "utf8"),
+);
+
+const menuNames = menu.map((item) => item.name);
+assert.deepEqual(
+  menuNames.slice(
+    menuNames.indexOf("Recruitment"),
+    menuNames.indexOf("Team") + 1,
+  ),
+  ["Recruitment", "Publish", "Team"],
+);
+assert.equal(menu.find((item) => item.name === "Publish")?.url, "/publish");
+
+assert.match(publishPage, /title="Publish"/);
+assert.match(publishPage, /collection="publications"/);
+assert.match(publishPage, /src="publication-card.html"/);
+assert.doesNotMatch(
+  publishPage,
+  /Peer-reviewed publications from the lab, listed by first online publication date\./,
+);
+assert.doesNotMatch(publishPage, /md:grid-cols-2/);
+
+assert.match(publicationCard, /{publications.title}/);
+assert.match(publicationCard, /{publications.image}/);
+assert.match(publicationCard, /{publications.journal}/);
+assert.match(publicationCard, /{publications.authors}/);
+assert.match(publicationCard, /sm:flex-row/);
+assert.match(publicationCard, /sm:w-/);
+
+assert.equal(publications.length, 5);
+
+for (const publication of publications) {
+  assert.equal(typeof publication.title, "string");
+  assert.equal(typeof publication.image, "string");
+  assert.equal(typeof publication.journal, "string");
+  assert.equal(typeof publication.authors, "string");
+  assert.equal(typeof publication.published, "string");
+  assert.match(publication.image, /^\/assets\/images\/publications\//);
+  assert.ok(fs.existsSync(publication.image.replace(/^\//, "")));
+}
+
+assert.deepEqual(
+  Object.fromEntries(
+    publications.map((publication) => [publication.title, publication.image]),
+  ),
+  {
+    "DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring":
+      "/assets/images/publications/dyscorediff-figure1.jpg",
+    "A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification":
+      "/assets/images/publications/ecg-cnn-transformer.png",
+    "A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis":
+      "/assets/images/publications/lmrt.jpg",
+    "HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease":
+      "/assets/images/publications/hsgo.jpg",
+    "SOCR-YOLO: Small Objects Detection Algorithm in Medical Images":
+      "/assets/images/publications/socr-yolo-figure1.jpg",
+  },
+);
+
+const timestamps = publications.map((publication) =>
+  Date.parse(publication.published),
+);
+assert.deepEqual(
+  timestamps,
+  [...timestamps].sort((left, right) => right - left),
+);
+
+assert.deepEqual(
+  publications.map((publication) => publication.title),
+  [
+    "DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring",
+    "A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification",
+    "A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis",
+    "HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease",
+    "SOCR-YOLO: Small Objects Detection Algorithm in Medical Images",
+  ],
+);

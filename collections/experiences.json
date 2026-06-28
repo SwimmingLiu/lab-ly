@@ -1,9 +1,27 @@
 [
     {
+        "dates": "2026.01 —— 2028.12",
+        "role": "Participant",
+        "company": "Zhejiang Provincial Natural Science Foundation",
+        "description": "Research on Precise Diagnosis Methods and Interpretability of Coronary Microvascular Disease Based on Intelligent Stress Myocardial Contrast Echocardiography"
+    },
+    {
+        "dates": "2025.01 —— 2027.12",
+        "role": "Principal Investigator",
+        "company": "Funding agency not specified",
+        "description": "Research on Intelligent Prediction of Major Adverse Cardiovascular Events Based on Data Augmentation and Multimodal Multi-Center Population Learning"
+    },
+    {
         "dates": "2024.01 —— 2026.12",
         "role": "Participant",
         "company": "Ministry of Science and Technology of China",
         "description": "Research on Key Technologies and Applications for Early Warning of Sudden Death from Malignant Arrhythmias Based on Intelligent Analysis of Big Data from Flexible Wearable ECG"
+    },
+    {
+        "dates": "2024.01 —— 2026.12",
+        "role": "Participant",
+        "company": "Zhejiang Provincial Department of Science and Technology",
+        "description": "Research on Key Technologies for Multimodal Image Guidance in Radiotherapy Based on Highly Sensitive Multispectral Cherenkov Imaging"
     },
     {
         "dates": "2023.06 —— 2026.06",

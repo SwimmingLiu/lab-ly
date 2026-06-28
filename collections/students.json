@@ -3,31 +3,36 @@
         "name" : "Xinmiao Zhu",
         "description": "Cross-modal Spine Generation",
         "image" : "/assets/images/avatars_students/zxm.jpeg",
-        "url" : "javascript:void(0)"
+        "url" : "mailto:1625012165@qq.com",
+        "email": "1625012165@qq.com"
     },
     {
         "name" : "Fangtao Song",
         "description": "Federated Learning & Swarm Learning",
         "image" : "/assets/images/avatars_students/sft.png",
-        "url" : "https://flik1337.com"
+        "url" : "mailto:664604982@qq.com",
+        "email": "664604982@qq.com"
     },
     {
         "name" : "Chenmiao Ruan",
         "description": "Image Registration",
         "image" : "/assets/images/avatars_students/rcm.jpeg",
-        "url" : "javascript:void(0)"
+        "url" : "mailto:275997493@qq.com",
+        "email": "275997493@qq.com"
     },
 
     {
         "name" : "Long Wei",
         "description": "ECG Classification",
         "image" : "/assets/images/avatars_students/wl.jpeg",
-        "url" : "javascript:void(0)"
+        "url" : "mailto:1410124534@qq.com",
+        "email": "1410124534@qq.com"
     },
     {
         "name" : "Yongjie Liu",
-        "description": "Lung Segementation & Author of YOLOSHOW",
+        "description": "Lung Nodule Detection & Segementation",
         "image" : "/assets/images/avatars_students/lyj.jpeg",
-        "url" : "https://swimmingliu.cn/"
+        "url" : "https://swimmingliu.cn/",
+        "email": "SwimmingLiu@outlook.com"
     }
 ]

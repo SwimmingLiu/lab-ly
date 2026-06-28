@@ -1,0 +1,52 @@
+[
+    {
+        "title": "DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring",
+        "journal": "IET Image Processing",
+        "authors": "Jiaqi Hu, Yang Li",
+        "published": "2026-05-15",
+        "dateLabel": "May 15, 2026",
+        "doi": "10.1049/ipr2.70384",
+        "url": "https://doi.org/10.1049/ipr2.70384",
+        "image": "/assets/images/publications/dyscorediff-figure1.jpg"
+    },
+    {
+        "title": "A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification",
+        "journal": "Signal, Image and Video Processing",
+        "authors": "Long Wei, Yang Li",
+        "published": "2025-05-27",
+        "dateLabel": "May 27, 2025",
+        "doi": "10.1007/s11760-025-04215-3",
+        "url": "https://doi.org/10.1007/s11760-025-04215-3",
+        "image": "/assets/images/publications/ecg-cnn-transformer.png"
+    },
+    {
+        "title": "A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis",
+        "journal": "IEEE Access",
+        "authors": "Xinmiao Zhu, Yang Li",
+        "published": "2025-03-28",
+        "dateLabel": "March 28, 2025",
+        "doi": "10.1109/ACCESS.2025.3555879",
+        "url": "https://doi.org/10.1109/ACCESS.2025.3555879",
+        "image": "/assets/images/publications/lmrt.jpg"
+    },
+    {
+        "title": "HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease",
+        "journal": "IEEE Journal of Biomedical and Health Informatics",
+        "authors": "Fangtao Song, Yang Li, Mingfeng Jiang, Kaicheng Li, Jucheng Zhang, Yinlong Zhang, Zhibo Pang",
+        "published": "2025-01-20",
+        "dateLabel": "January 20, 2025",
+        "doi": "10.1109/JBHI.2025.3531419",
+        "url": "https://doi.org/10.1109/JBHI.2025.3531419",
+        "image": "/assets/images/publications/hsgo.jpg"
+    },
+    {
+        "title": "SOCR-YOLO: Small Objects Detection Algorithm in Medical Images",
+        "journal": "International Journal of Imaging Systems and Technology",
+        "authors": "Yongjie Liu, Yang Li, Mingfeng Jiang, Shuchao Wang, Shitai Ye, Simon Walsh, Guang Yang",
+        "published": "2024-06-21",
+        "dateLabel": "June 21, 2024",
+        "doi": "10.1002/ima.23130",
+        "url": "https://doi.org/10.1002/ima.23130",
+        "image": "/assets/images/publications/socr-yolo-figure1.jpg"
+    }
+]

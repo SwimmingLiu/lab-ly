@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
     applyMenuItemClasses();
     evaluateHeaderPosition();
     mobileMenuFunctionality();
+    initProjectCardContextMenu();
 });
 
 // window.toggleDarkMode = function(){
@@ -173,4 +174,111 @@ window.closeMobileMenu = function(){
     document.getElementById('openMenu').classList.remove('hidden');
     document.getElementById('menu').classList.add('hidden');
     document.getElementById('mobileMenuBackground').classList.add('hidden');
+}
+
+function initProjectCardContextMenu(){
+    const cards = document.querySelectorAll('[data-email]');
+    if(!cards.length){
+        return;
+    }
+
+    const menu = document.createElement('div');
+    menu.id = 'projectCardContextMenu';
+    menu.className = 'fixed z-50 hidden min-w-32 overflow-hidden rounded-md border border-neutral-200 bg-white py-1 text-sm shadow-lg dark:border-neutral-700 dark:bg-neutral-900';
+    document.body.appendChild(menu);
+
+    cards.forEach(function(card){
+        card.addEventListener('contextmenu', function(event){
+            event.preventDefault();
+            showProjectCardContextMenu(event, card, menu);
+        });
+    });
+
+    document.addEventListener('click', function(){
+        hideProjectCardContextMenu(menu);
+    });
+
+    document.addEventListener('keydown', function(event){
+        if(event.key === 'Escape'){
+            hideProjectCardContextMenu(menu);
+        }
+    });
+
+    window.addEventListener('scroll', function(){
+        hideProjectCardContextMenu(menu);
+    }, { passive: true });
+}
+
+function showProjectCardContextMenu(event, card, menu){
+    const email = card.dataset.email;
+    const profileUrl = card.dataset.profileUrl || card.getAttribute('href');
+    const hasHomepage = isHomepageUrl(profileUrl);
+    const items = [
+        {
+            label: '复制邮箱',
+            action: function(){
+                copyTextToClipboard(email);
+            }
+        }
+    ];
+
+    if(hasHomepage){
+        items.push({
+            label: '访问主页',
+            action: function(){
+                window.location.href = profileUrl;
+            }
+        });
+    }
+
+    menu.innerHTML = '';
+    items.forEach(function(item){
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'block w-full px-4 py-2 text-left text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800';
+        button.textContent = item.label;
+        button.addEventListener('click', function(){
+            item.action();
+            hideProjectCardContextMenu(menu);
+        });
+        menu.appendChild(button);
+    });
+
+    menu.classList.remove('hidden');
+    const menuRect = menu.getBoundingClientRect();
+    const x = Math.min(event.clientX, window.innerWidth - menuRect.width - 8);
+    const y = Math.min(event.clientY, window.innerHeight - menuRect.height - 8);
+    menu.style.left = Math.max(8, x) + 'px';
+    menu.style.top = Math.max(8, y) + 'px';
+}
+
+function hideProjectCardContextMenu(menu){
+    if(menu){
+        menu.classList.add('hidden');
+    }
+}
+
+function isHomepageUrl(url){
+    if(!url){
+        return false;
+    }
+
+    return !url.startsWith('mailto:') && !url.startsWith('javascript:');
+}
+
+function copyTextToClipboard(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text);
+        return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
 }

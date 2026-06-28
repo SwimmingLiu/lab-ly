@@ -8,6 +8,10 @@
         "url" : "/recruitment"
     },
     {
+        "name" : "Publish",
+        "url" : "/publish"
+    },
+    {
         "name" : "Team",
         "url" : "/team"
     },
