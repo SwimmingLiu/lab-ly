@@ -1,17 +1,10 @@
 [
     {
-        "name" : "刘永杰",
-        "description": "肺结节检测与分割",
-        "image" : "/assets/images/avatars_students/lyj.jpeg",
-        "url" : "https://swimmingliu.cn/",
-        "email": "SwimmingLiu@outlook.com"
-    },
-    {
-        "name" : "韦龙",
-        "description": "心电信号分类",
-        "image" : "/assets/images/avatars_students/wl.jpeg",
-        "url" : "mailto:1410124534@qq.com",
-        "email": "1410124534@qq.com"
+        "name" : "朱鑫淼",
+        "description": "跨模态脊柱影像生成",
+        "image" : "/assets/images/avatars_students/zxm.jpeg",
+        "url" : "mailto:1625012165@qq.com",
+        "email": "1625012165@qq.com"
     },
     {
         "name" : "宋方涛",
@@ -21,17 +14,24 @@
         "email": "664604982@qq.com"
     },
     {
-        "name" : "朱鑫淼",
-        "description": "跨模态脊柱影像生成",
-        "image" : "/assets/images/avatars_students/zxm.jpeg",
-        "url" : "mailto:1625012165@qq.com",
-        "email": "1625012165@qq.com"
-    },
-    {
         "name" : "阮晨淼",
         "description": "图像配准",
         "image" : "/assets/images/avatars_students/rcm.jpeg",
         "url" : "mailto:275997493@qq.com",
         "email": "275997493@qq.com"
+    },
+    {
+        "name" : "韦龙",
+        "description": "心电信号分类",
+        "image" : "/assets/images/avatars_students/wl.jpeg",
+        "url" : "mailto:1410124534@qq.com",
+        "email": "1410124534@qq.com"
+    },
+    {
+        "name" : "刘永杰",
+        "description": "肺结节检测与分割",
+        "image" : "/assets/images/avatars_students/lyj.jpeg",
+        "url" : "https://swimmingliu.cn/",
+        "email": "SwimmingLiu@outlook.com"
     }
 ]

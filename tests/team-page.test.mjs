@@ -31,13 +31,6 @@ assert.deepEqual(
 
 const expectedCurrentStudents = [
   {
-    name: "张骏益",
-    description: "联邦参数高效微调",
-    image: "/assets/images/avatars_students/zjy.jpg",
-    url: "mailto:1798860756@qq.com",
-    email: "1798860756@qq.com",
-  },
-  {
     name: "胡佳奇",
     description: "基于扩散模型的医学图像分割",
     image: "/assets/images/avatars_students/hjq.jpg",
@@ -52,11 +45,18 @@ const expectedCurrentStudents = [
     email: "15370843756@163.com",
   },
   {
-    name: "王金科",
-    description: "心脏超声图像分割",
-    image: "/assets/images/avatars_students/wjk.jpg",
-    url: "mailto:483091634@qq.com",
-    email: "483091634@qq.com",
+    name: "张骏益",
+    description: "联邦参数高效微调",
+    image: "/assets/images/avatars_students/zjy.jpg",
+    url: "mailto:1798860756@qq.com",
+    email: "1798860756@qq.com",
+  },
+  {
+    name: "金明浩",
+    description: "基于流匹配的跨模态医学图像合成",
+    image: "/assets/images/avatars_students/jmh.jpg",
+    url: "mailto:m15397321136@163.com",
+    email: "m15397321136@163.com",
   },
   {
     name: "洪凌云",
@@ -66,28 +66,21 @@ const expectedCurrentStudents = [
     email: "watchly@qq.com",
   },
   {
-    name: "金明浩",
-    description: "基于流匹配的跨模态医学图像合成",
-    image: "/assets/images/avatars_students/jmh.jpg",
-    url: "mailto:m15397321136@163.com",
-    email: "m15397321136@163.com",
+    name: "王金科",
+    description: "心脏超声图像分割",
+    image: "/assets/images/avatars_students/wjk.jpg",
+    url: "mailto:483091634@qq.com",
+    email: "483091634@qq.com",
   },
 ];
 
 const expectedGraduatedStudents = [
   {
-    name: "刘永杰",
-    description: "肺结节检测与分割",
-    image: "/assets/images/avatars_students/lyj.jpeg",
-    url: "https://swimmingliu.cn/",
-    email: "SwimmingLiu@outlook.com",
-  },
-  {
-    name: "韦龙",
-    description: "心电信号分类",
-    image: "/assets/images/avatars_students/wl.jpeg",
-    url: "mailto:1410124534@qq.com",
-    email: "1410124534@qq.com",
+    name: "朱鑫淼",
+    description: "跨模态脊柱影像生成",
+    image: "/assets/images/avatars_students/zxm.jpeg",
+    url: "mailto:1625012165@qq.com",
+    email: "1625012165@qq.com",
   },
   {
     name: "宋方涛",
@@ -97,18 +90,25 @@ const expectedGraduatedStudents = [
     email: "664604982@qq.com",
   },
   {
-    name: "朱鑫淼",
-    description: "跨模态脊柱影像生成",
-    image: "/assets/images/avatars_students/zxm.jpeg",
-    url: "mailto:1625012165@qq.com",
-    email: "1625012165@qq.com",
-  },
-  {
     name: "阮晨淼",
     description: "图像配准",
     image: "/assets/images/avatars_students/rcm.jpeg",
     url: "mailto:275997493@qq.com",
     email: "275997493@qq.com",
+  },
+  {
+    name: "韦龙",
+    description: "心电信号分类",
+    image: "/assets/images/avatars_students/wl.jpeg",
+    url: "mailto:1410124534@qq.com",
+    email: "1410124534@qq.com",
+  },
+  {
+    name: "刘永杰",
+    description: "肺结节检测与分割",
+    image: "/assets/images/avatars_students/lyj.jpeg",
+    url: "https://swimmingliu.cn/",
+    email: "SwimmingLiu@outlook.com",
   },
 ];
 
@@ -118,16 +118,16 @@ assert.deepEqual(graduatedStudents, expectedGraduatedStudents);
 assert.deepEqual(
   [...graduatedStudents, ...currentStudents].map((student) => student.name),
   [
-    "刘永杰",
-    "韦龙",
-    "宋方涛",
     "朱鑫淼",
+    "宋方涛",
     "阮晨淼",
-    "张骏益",
+    "韦龙",
+    "刘永杰",
     "胡佳奇",
     "范紫龙",
-    "王金科",
-    "洪凌云",
+    "张骏益",
     "金明浩",
+    "洪凌云",
+    "王金科",
   ],
 );
