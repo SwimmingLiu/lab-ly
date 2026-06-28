@@ -59,3 +59,16 @@ assert.match(cardHomepage, /data-i18n="profile\.role"/);
 assert.match(cardHomepage, /data-i18n="profile\.degree"/);
 assert.match(cardHomepage, /data-i18n="profile\.membership"/);
 assert.match(cardHomepage, /data-i18n="profile\.research"/);
+assert.match(card, /data-i18n="profile\.name"/);
+assert.match(cardHomepage, /data-i18n="profile\.name"/);
+
+assert.match(teamPage, /nameKey="\{instructors\.nameKey\}"/);
+assert.match(teamPage, /descriptionKey="\{instructors\.descriptionKey\}"/);
+assert.match(teamPage, /nameKey="\{current_students\.nameKey\}"/);
+assert.match(teamPage, /descriptionKey="\{current_students\.descriptionKey\}"/);
+assert.match(teamPage, /nameKey="\{students\.nameKey\}"/);
+assert.match(teamPage, /descriptionKey="\{students\.descriptionKey\}"/);
+assert.match(projectsPage, /nameKey="\{instructors\.nameKey\}"/);
+assert.match(projectsPage, /descriptionKey="\{instructors\.descriptionKey\}"/);
+assert.match(projectsPage, /nameKey="\{students\.nameKey\}"/);
+assert.match(projectsPage, /descriptionKey="\{students\.descriptionKey\}"/);

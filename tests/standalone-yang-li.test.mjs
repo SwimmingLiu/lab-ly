@@ -1,12 +1,10 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-const files = [
+const englishFiles = [
   "README.md",
-  "assets/js/main.js",
   "collections/instructors.json",
   "collections/publications.json",
-  "collections/recruiment.json",
   "pages/about.html",
   "pages/index.html",
   "includes/home/card.html",
@@ -15,18 +13,22 @@ const files = [
 
 const standaloneRomanizedName = /\bYang\s+Li\b/;
 
-for (const file of files) {
+for (const file of englishFiles) {
   const content = fs.readFileSync(file, "utf8");
 
-  assert.doesNotMatch(
+  assert.match(
     content,
     standaloneRomanizedName,
-    `${file} should use 李杨 for standalone romanized name references`,
+    `${file} should preserve standalone Yang Li in English baseline content`,
   );
 }
 
 const mainJs = fs.readFileSync("assets/js/main.js", "utf8");
-const recruitment = fs.readFileSync("collections/recruiment.json", "utf8");
 
-assert.doesNotMatch(mainJs, /tutor YangLi/);
-assert.doesNotMatch(recruitment, /tutor YangLi/);
+assert.match(mainJs, /'home\.intro': '<span class="font-semibold">YangLi Lab<\/span>, led by Dr\. Yang Li/);
+assert.match(mainJs, /'about\.heading': 'About Yang Li'/);
+assert.match(mainJs, /'profile\.name': 'Yang Li'/);
+assert.match(mainJs, /'profile\.name': '李杨'/);
+assert.match(mainJs, /'team\.instructors\.yangLi\.name': '李杨'/);
+assert.match(mainJs, /'team\.currentStudents\.jiaqiHu\.name': '胡佳奇'/);
+assert.match(mainJs, /'team\.students\.yongjieLiu\.name': '刘永杰'/);

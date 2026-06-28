@@ -1,42 +1,54 @@
 [
     {
-        "name": "胡佳奇",
-        "description": "基于扩散模型的医学图像分割",
+        "name": "JiaQi Hu",
+        "description": "Medical image segmentation based on diffusion models",
+        "nameKey": "team.currentStudents.jiaqiHu.name",
+        "descriptionKey": "team.currentStudents.jiaqiHu.description",
         "image": "/assets/images/avatars_students/hjq.jpg",
         "url": "mailto:hujiaqii@foxmail.com",
         "email": "hujiaqii@foxmail.com"
     },
     {
-        "name": "范紫龙",
-        "description": "半监督医学图像分割",
+        "name": "ZiLong Fan",
+        "description": "Semi-supervised medical image segmentation",
+        "nameKey": "team.currentStudents.zilongFan.name",
+        "descriptionKey": "team.currentStudents.zilongFan.description",
         "image": "/assets/images/avatars_students/fzl.jpg",
         "url": "mailto:15370843756@163.com",
         "email": "15370843756@163.com"
     },
     {
-        "name": "张骏益",
-        "description": "联邦参数高效微调",
+        "name": "JunYi Zhang",
+        "description": "Federated Parameter-Efficient Fine-Tuning",
+        "nameKey": "team.currentStudents.junyiZhang.name",
+        "descriptionKey": "team.currentStudents.junyiZhang.description",
         "image": "/assets/images/avatars_students/zjy.jpg",
         "url": "mailto:1798860756@qq.com",
         "email": "1798860756@qq.com"
     },
     {
-        "name": "金明浩",
-        "description": "基于流匹配的跨模态医学图像合成",
+        "name": "MingHao Jin",
+        "description": "Flow Matching-based cross-modal medical image synthesis",
+        "nameKey": "team.currentStudents.minghaoJin.name",
+        "descriptionKey": "team.currentStudents.minghaoJin.description",
         "image": "/assets/images/avatars_students/jmh.jpg",
         "url": "mailto:m15397321136@163.com",
         "email": "m15397321136@163.com"
     },
     {
-        "name": "洪凌云",
-        "description": "联邦学习与心电信号分类",
+        "name": "LingYun Hong",
+        "description": "Federated Learning & ECG Classification",
+        "nameKey": "team.currentStudents.lingyunHong.name",
+        "descriptionKey": "team.currentStudents.lingyunHong.description",
         "image": "/assets/images/avatars_students/hly.jpg",
         "url": "mailto:watchly@qq.com",
         "email": "watchly@qq.com"
     },
     {
-        "name": "王金科",
-        "description": "心脏超声图像分割",
+        "name": "JinKe Wang",
+        "description": "Cardiac Ultrasound Image Segmentation",
+        "nameKey": "team.currentStudents.jinkeWang.name",
+        "descriptionKey": "team.currentStudents.jinkeWang.description",
         "image": "/assets/images/avatars_students/wjk.jpg",
         "url": "mailto:483091634@qq.com",
         "email": "483091634@qq.com"
