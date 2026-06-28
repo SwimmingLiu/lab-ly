@@ -8,15 +8,232 @@ const stickyClassesContainer = ['border-neutral-300/50' , 'bg-white/80', 'dark:b
 const unstickyClassesContainer = ['border-transparent'];
 let headerElement = null;
 
+window.siteLanguage = 'en';
+
+const translations = {
+    en: {
+        'nav.home': 'Home',
+        'nav.recruitment': 'Recruitment',
+        'nav.publish': 'Publish',
+        'nav.team': 'Team',
+        'nav.about': 'About',
+        'theme.day': 'Day mode',
+        'theme.night': 'Night mode',
+        'language.toggleToChinese': 'Switch language to Chinese',
+        'language.toggleToEnglish': 'Switch language to English',
+        'language.current': 'EN',
+        'page.home.title': 'YangLi Lab - Your Dream Lab',
+        'page.about.title': 'About Me',
+        'page.recruitment.title': 'Recruitment',
+        'page.publish.title': 'Publish',
+        'page.team.title': 'Team',
+        'page.posts.title': 'My Writing',
+        'home.title': 'Hi~ Welcome to YangLi Lab.',
+        'home.intro': '<span class="font-semibold">YangLi Lab</span>, led by Dr. Yang Li, develops AI for medical image analysis and computer-aided diagnosis.',
+        'home.research.medicalImage': 'Medical Image Processing and Analysis',
+        'home.research.aiForScience': 'Artificial Intelligence for Science',
+        'home.research.diagnosis': 'Computer-aided Diagnosis',
+        'home.research.deepLearning': 'Deep Learning',
+        'home.research.more': 'Other more areas ....',
+        'home.values': 'Our Values can be found here.',
+        'about.heading': 'About Yang Li',
+        'about.description': 'Hello 👋 Here is some detailed introduction about Dr. Yang Li',
+        'about.introduction.title': 'Introduction',
+        'about.introduction.body': 'Yang Li, Ph.D. of Engineering in Pattern Recognition and Intelligent Systems at the University of the Chinese Academy of Sciences, is an Associate Professor and Master\'s Supervisor at the School of Computer Science and Technology (School of Artificial Intelligence), Zhejiang Sci-Tech University, and a Senior Member of the Chinese Society of Biomedical Engineering.<br>Currently, he presides over one National Natural Science Foundation of China (NSFC) Youth Fund project, one Zhejiang Province Basic Public Welfare Research Plan project, and one sub-project of the Ningxia Hui Autonomous Region Key R&D Plan, and participates in one National Key R&D Program, two National Natural Science Foundation projects, and one Zhejiang Province Key R&D Plan project. He has published over 20 SCI/EI papers and co-authored one academic monograph.',
+        'about.funds': 'Funds',
+        'recruitment.heading': 'Join US',
+        'recruitment.description': 'Welcome to our recruitment page. Here is a brief introduction to our laboratory, including laboratory equipments and benefits.',
+        'recruitment.devices.title': '🖥️ Devices',
+        'recruitment.devices.description': 'Our lab\'s servers are equipped with <span class="font-semibold">5 RTX 4090 GPUs</span> and <span class="font-semibold">128GB of RAM</span>, providing each student with an individual account, supporting SSH remote connections, high concurrency, and high responsiveness to meet the research and experimental needs of <span class="font-semibold">every student</span>.',
+        'recruitment.requirements.title': '🛠️ Requirements',
+        'recruitment.requirements.description': 'If you are interested in the following topics and are passionate about learning medical AI knowledge, please prepare your <span class="font-semibold">Personal Materials</span>.<br> The materials are included but not limited to your <span class="font-semibold">Resume</span>, <span class="font-semibold">Award Certificates</span>, and <span class="font-semibold">Research Experience</span>, as evidence of your comprehensive abilities. <br><br>Our research topics are as following:<ul class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"><li>Medical Image Segmentation, Detection, and Registration</li><li>Early Alzheimer\'s Disease Computer-aided Diagnosis</li><li>Cross-modal and Multimodal Medical Image Analysis</li><li>ECG Classification and Computer-aided Diagnosis</li><li>Federated Learning for Medical AI</li></ul>',
+        'recruitment.contact.title': '📮 Contact',
+        'recruitment.contact.description': 'If meeting our requirements, and you are willing to join us. Please prepare your personal materials and contact our tutor YangLi via email. The mail is <span class="font-semibold">yangli@zstu.edu.cn</span>',
+        'publish.heading': 'Published Papers',
+        'publish.description': '',
+        'team.heading': 'Team Memberships',
+        'team.description': '',
+        'team.professors': 'Professors',
+        'team.currentStudents': 'Current Students',
+        'team.graduatedStudents': 'Graduated Students',
+        'team.instructor': 'Instructor',
+        'team.students': 'Students',
+        'posts.heading': 'My Writing',
+        'posts.description': 'Dive into my musings on life and tech in my latest posts; a blend of introspection and innovation. Keep an eye out for fresh insights and updates!',
+        'footer.tagline': '© 2026 YangLi Lab - Your Dream Lab',
+        'profile.role': 'Assistant Professor',
+        'profile.button': 'Profile',
+        'profile.degree': 'Ph.D. at UCAS (SHEN YANG)',
+        'profile.membership': 'Senoir Member of CSBME',
+        'profile.research': 'Pattern Recognition',
+        'context.copyEmail': 'Copy email',
+        'context.visitHomepage': 'Visit homepage'
+    },
+    zh: {
+        'nav.home': '首页',
+        'nav.recruitment': '招生',
+        'nav.publish': '发表论文',
+        'nav.team': '团队',
+        'nav.about': '关于',
+        'theme.day': '日间模式',
+        'theme.night': '夜间模式',
+        'language.toggleToChinese': '切换到中文',
+        'language.toggleToEnglish': '切换到英文',
+        'language.current': '中文',
+        'page.home.title': '扬理实验室 - Your Dream Lab',
+        'page.about.title': '关于杨理',
+        'page.recruitment.title': '招生',
+        'page.publish.title': '发表论文',
+        'page.team.title': '团队',
+        'page.posts.title': '文章',
+        'home.title': 'Hi~ 欢迎来到扬理实验室。',
+        'home.intro': '<span class="font-semibold">扬理实验室</span>由李杨博士负责，聚焦医学图像分析与计算机辅助诊断方向的人工智能研究。',
+        'home.research.medicalImage': '医学图像处理与分析',
+        'home.research.aiForScience': '科学智能',
+        'home.research.diagnosis': '计算机辅助诊断',
+        'home.research.deepLearning': '深度学习',
+        'home.research.more': '更多研究方向 ....',
+        'home.values': '我们的研究理念可在这里查看。',
+        'about.heading': '关于李杨',
+        'about.description': '你好 👋 这里是李杨博士的详细介绍',
+        'about.introduction.title': '个人简介',
+        'about.introduction.body': '李杨，中国科学院大学模式识别与智能系统专业工学博士，现为浙江理工大学计算机科学与技术学院（人工智能学院）副教授、硕士生导师，中国生物医学工程学会高级会员。<br>目前主持国家自然科学基金青年项目、浙江省基础公益研究计划项目、宁夏回族自治区重点研发计划子课题各1项，并参与国家重点研发计划项目1项、国家自然科学基金项目2项、浙江省重点研发计划项目1项。已发表 SCI/EI 论文20余篇，合著学术专著1部。',
+        'about.funds': '科研项目',
+        'recruitment.heading': '加入我们',
+        'recruitment.description': '欢迎查看招生页面。这里简要介绍实验室设备和福利等信息。',
+        'recruitment.devices.title': '🖥️ 设备',
+        'recruitment.devices.description': '实验室服务器配备 <span class="font-semibold">5 张 RTX 4090 GPU</span> 和 <span class="font-semibold">128GB 内存</span>，为每位同学提供独立账号，支持 SSH 远程连接、高并发和快速响应，满足 <span class="font-semibold">每位同学</span> 的科研实验需求。',
+        'recruitment.requirements.title': '🛠️ 要求',
+        'recruitment.requirements.description': '如果你对以下方向感兴趣，并愿意学习医学人工智能知识，请准备好你的 <span class="font-semibold">个人材料</span>。材料包括但不限于 <span class="font-semibold">简历</span>、<span class="font-semibold">获奖证书</span> 和 <span class="font-semibold">科研经历</span>，用于展示综合能力。<br><br>我们的研究方向包括：<ul class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"><li>医学图像分割、检测与配准</li><li>早期阿尔茨海默病计算机辅助诊断</li><li>跨模态与多模态医学图像分析</li><li>心电分类与计算机辅助诊断</li><li>面向医学人工智能的联邦学习</li></ul>',
+        'recruitment.contact.title': '📮 联系方式',
+        'recruitment.contact.description': '如果你符合要求并愿意加入我们，请准备个人材料并通过邮件联系导师李杨。邮箱为 <span class="font-semibold">yangli@zstu.edu.cn</span>。',
+        'publish.heading': '发表论文',
+        'publish.description': '',
+        'team.heading': '团队成员',
+        'team.description': '',
+        'team.professors': '教师',
+        'team.currentStudents': '在读学生',
+        'team.graduatedStudents': '已毕业学生',
+        'team.instructor': '导师',
+        'team.students': '学生',
+        'posts.heading': '文章',
+        'posts.description': '阅读近期文章，了解生活与技术方面的思考、实践和更新。',
+        'footer.tagline': '© 2026 扬理实验室 - Your Dream Lab',
+        'profile.role': '副教授',
+        'profile.button': '主页',
+        'profile.degree': '中国科学院大学博士（沈阳）',
+        'profile.membership': '中国生物医学工程学会高级会员',
+        'profile.research': '模式识别',
+        'context.copyEmail': '复制邮箱',
+        'context.visitHomepage': '访问主页'
+    }
+};
+
+function normalizeLanguage(language){
+    return language == 'zh' ? 'zh' : 'en';
+}
+
+function getStoredValue(key){
+    try {
+        return localStorage.getItem(key);
+    } catch (error) {
+        return null;
+    }
+}
+
+function getStoredLanguage(){
+    try {
+        const storedLanguage = localStorage.getItem('site_language');
+        return normalizeLanguage(storedLanguage);
+    } catch (error) {
+        return 'en';
+    }
+}
+
+function setStoredLanguage(language){
+    const normalizedLanguage = normalizeLanguage(language);
+    try {
+        localStorage.setItem('site_language', normalizedLanguage);
+    } catch (error) {
+        window.siteLanguage = normalizedLanguage;
+    }
+}
+
+function getTranslation(key, language){
+    const selectedLanguage = normalizeLanguage(language || window.siteLanguage);
+    return translations[selectedLanguage][key] || translations.en[key] || null;
+}
+
+function applyLanguage(language){
+    const selectedLanguage = normalizeLanguage(language);
+    window.siteLanguage = selectedLanguage;
+    document.documentElement.lang = selectedLanguage == 'zh' ? 'zh-CN' : 'en';
+
+    document.querySelectorAll('[data-i18n]').forEach(function(element){
+        const translatedText = getTranslation(element.dataset.i18n, selectedLanguage);
+        if(translatedText !== null){
+            element.textContent = translatedText;
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(function(element){
+        const translatedHtml = getTranslation(element.dataset.i18nHtml, selectedLanguage);
+        if(translatedHtml !== null){
+            element.innerHTML = translatedHtml;
+        }
+    });
+
+    const titleElement = document.querySelector('[data-i18n-document-title]');
+    if(titleElement){
+        const translatedTitle = getTranslation(titleElement.dataset.i18nDocumentTitle, selectedLanguage);
+        if(translatedTitle !== null){
+            document.title = translatedTitle;
+        }
+    }
+
+    updateLanguageToggle(selectedLanguage);
+}
+
+function updateLanguageToggle(language){
+    const selectedLanguage = normalizeLanguage(language);
+    const languageToggle = document.getElementById('languageToggle');
+    const languageToggleText = document.getElementById('languageToggleText');
+
+    if(languageToggleText){
+        languageToggleText.textContent = getTranslation('language.current', selectedLanguage);
+    }
+
+    if(languageToggle){
+        const nextLanguageLabel = selectedLanguage == 'zh' ? 'language.toggleToEnglish' : 'language.toggleToChinese';
+        languageToggle.setAttribute('aria-label', getTranslation(nextLanguageLabel, selectedLanguage));
+    }
+}
+
+function toggleLanguage(){
+    const nextLanguage = window.siteLanguage == 'zh' ? 'en' : 'zh';
+    setStoredLanguage(nextLanguage);
+    applyLanguage(nextLanguage);
+}
+
+function initLanguageToggle(){
+    applyLanguage(getStoredLanguage());
+
+    const languageToggle = document.getElementById('languageToggle');
+    if(languageToggle){
+        languageToggle.addEventListener('click', toggleLanguage);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function(){
     headerElement = document.getElementById('header');
 
-    if(localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true'){
+    if(getStoredValue('dark_mode') == 'true'){
         window.darkMode = true;
         showNight();
     } else {
         showDay();
     }
+    initLanguageToggle();
     stickyHeaderFuncionality();
     applyMenuItemClasses();
     evaluateHeaderPosition();
@@ -215,7 +432,7 @@ function showProjectCardContextMenu(event, card, menu){
     const hasHomepage = isHomepageUrl(profileUrl);
     const items = [
         {
-            label: '复制邮箱',
+            label: getTranslation('context.copyEmail'),
             action: function(){
                 copyTextToClipboard(email);
             }
@@ -224,7 +441,7 @@ function showProjectCardContextMenu(event, card, menu){
 
     if(hasHomepage){
         items.push({
-            label: '访问主页',
+            label: getTranslation('context.visitHomepage'),
             action: function(){
                 window.location.href = profileUrl;
             }
