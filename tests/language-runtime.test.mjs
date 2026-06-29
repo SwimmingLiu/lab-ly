@@ -32,6 +32,8 @@ assert.match(mainJs, /'page.home.title': 'YangLi Lab - Your Dream Lab'/);
 assert.match(mainJs, /'page.home.title': 'YangLi Lab - Your Dream Lab'/);
 assert.match(mainJs, /'home.title': 'Hi~ 欢迎来到 ?YangLi Lab。'/);
 assert.match(mainJs, /'home.intro': '<span class="font-semibold">YangLi Lab<\/span> ?由李杨/);
+assert.match(mainJs, /'about\.introduction\.body': '<p>李杨/);
+assert.match(mainJs, /<p>目前主持国家自然科学基金青年项目/);
 assert.match(mainJs, /'footer.tagline': '© 2026 YangLi Lab - Your Dream Lab'/);
 assert.doesNotMatch(mainJs, /扬理实验室/);
 assert.match(mainJs, /'context.copyEmail': 'Copy email'/);

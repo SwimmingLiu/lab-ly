@@ -19,11 +19,15 @@ assert.match(homePage, /data-i18n="home\.title"/);
 assert.match(homePage, /data-i18n-html="home\.intro"/);
 assert.match(homePage, /data-i18n="home\.research\.medicalImage"/);
 assert.match(homePage, /data-i18n="home\.values"/);
+assert.match(homePage, /md:gap-12/);
+assert.match(homePage, /xl:gap-16/);
+assert.match(homePage, /md:w-\[46%\]/);
 
 assert.match(aboutPage, /titleKey="about\.heading"/);
 assert.match(aboutPage, /descriptionKey="about\.description"/);
 assert.match(aboutPage, /data-i18n="about\.introduction\.title"/);
 assert.match(aboutPage, /data-i18n-html="about\.introduction\.body"/);
+assert.match(aboutPage, /class="[^"]*about-introduction[^"]*"/);
 assert.match(aboutPage, /data-i18n="about\.funds"/);
 
 assert.match(recruitmentPage, /titleKey="recruitment\.heading"/);
@@ -63,6 +67,9 @@ assert.match(cardHomepage, /data-i18n="profile\.membership"/);
 assert.match(cardHomepage, /data-i18n="profile\.research"/);
 assert.match(card, /data-i18n="profile\.name"/);
 assert.match(cardHomepage, /data-i18n="profile\.name"/);
+assert.match(cardHomepage, /flex-nowrap/);
+assert.match(cardHomepage, /whitespace-nowrap/);
+assert.match(cardHomepage, /profile-name-role/);
 
 assert.match(teamPage, /nameKey="\{instructors\.nameKey\}"/);
 assert.match(teamPage, /descriptionKey="\{instructors\.descriptionKey\}"/);
