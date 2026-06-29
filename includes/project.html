@@ -1,4 +1,4 @@
-<a href="{url}" data-email="{email}" data-profile-url="{url}" rel="noopener noreferrer" class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-auto min-h-56 w-full max-w-64 mx-auto rounded-2xl">
+<article data-email="{email}" class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-auto min-h-56 w-full max-w-64 mx-auto rounded-2xl">
     <span class="absolute inset-0 z-20 block w-full h-full duration-300 ease-out bg-transparent border border-transparent border-dashed group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-neutral-300 dark:group-hover:border-neutral-600 group-hover:border-dashed rounded-2xl group-hover:bg-white dark:group-hover:bg-neutral-950"></span>
     <span class="absolute inset-0 z-10 block w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"></span>
     <span class="relative z-30 block flex flex-col	 align-center justify-center duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
@@ -19,6 +19,10 @@
                 <span>{email}</span>
             </span>
             <span data-i18n="{descriptionKey}" class="mt-2 block text-sm leading-6 break-words text-neutral-600 dark:text-neutral-400">{description}</span>
+            <span class="mt-4 flex w-full items-center justify-center gap-2">
+                <a href="{url}" rel="noopener noreferrer" data-i18n="context.visitHomepage" class="inline-flex min-h-8 items-center justify-center rounded-full border border-neutral-300 px-3 text-[11px] font-semibold leading-none text-neutral-700 duration-200 hover:border-neutral-600 hover:text-neutral-950 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-400 dark:hover:text-white">Visit homepage</a>
+                <button type="button" data-copy-email="{email}" data-i18n="context.copyEmail" class="inline-flex min-h-8 items-center justify-center rounded-full border border-neutral-300 px-3 text-[11px] font-semibold leading-none text-neutral-700 duration-200 hover:border-neutral-600 hover:text-neutral-950 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-400 dark:hover:text-white">Copy email</button>
+            </span>
         </div>
     </span>
-</a>
+</article>

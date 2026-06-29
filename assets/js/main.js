@@ -69,6 +69,7 @@ const translations = {
         'profile.research': 'Pattern Recognition',
         'context.copyEmail': 'Copy email',
         'context.visitHomepage': 'Visit homepage',
+        'context.emailCopied': 'Copied',
         'team.instructors.mingfengJiang.name': 'Mingfeng Jiang',
         'team.instructors.mingfengJiang.description': 'Leader & Medical Image Processing',
         'team.instructors.yangLi.name': 'Yang Li',
@@ -159,6 +160,7 @@ const translations = {
         'profile.research': '模式识别',
         'context.copyEmail': '复制邮箱',
         'context.visitHomepage': '访问主页',
+        'context.emailCopied': '已复制',
         'funds.roles.principalInvestigator': '主持',
         'funds.roles.participant': '参与',
         'funds.agencies.zhejiangNaturalScience': '浙江省自然科学基金委',
@@ -326,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function(){
     applyMenuItemClasses();
     evaluateHeaderPosition();
     mobileMenuFunctionality();
-    initProjectCardContextMenu();
+    initCopyEmailButtons();
 });
 
 // window.toggleDarkMode = function(){
@@ -481,94 +483,28 @@ window.closeMobileMenu = function(){
     document.getElementById('mobileMenuBackground').classList.add('hidden');
 }
 
-function initProjectCardContextMenu(){
-    const cards = document.querySelectorAll('[data-email]');
-    if(!cards.length){
+function initCopyEmailButtons(){
+    const buttons = document.querySelectorAll('[data-copy-email]');
+    if(!buttons.length){
         return;
     }
 
-    const menu = document.createElement('div');
-    menu.id = 'projectCardContextMenu';
-    menu.className = 'fixed z-50 hidden min-w-32 overflow-hidden rounded-md border border-neutral-200 bg-white py-1 text-sm shadow-lg dark:border-neutral-700 dark:bg-neutral-900';
-    document.body.appendChild(menu);
-
-    cards.forEach(function(card){
-        card.addEventListener('contextmenu', function(event){
-            event.preventDefault();
-            showProjectCardContextMenu(event, card, menu);
-        });
-    });
-
-    document.addEventListener('click', function(){
-        hideProjectCardContextMenu(menu);
-    });
-
-    document.addEventListener('keydown', function(event){
-        if(event.key === 'Escape'){
-            hideProjectCardContextMenu(menu);
-        }
-    });
-
-    window.addEventListener('scroll', function(){
-        hideProjectCardContextMenu(menu);
-    }, { passive: true });
-}
-
-function showProjectCardContextMenu(event, card, menu){
-    const email = card.dataset.email;
-    const profileUrl = card.dataset.profileUrl || card.getAttribute('href');
-    const hasHomepage = isHomepageUrl(profileUrl);
-    const items = [
-        {
-            label: getTranslation('context.copyEmail'),
-            action: function(){
-                copyTextToClipboard(email);
-            }
-        }
-    ];
-
-    if(hasHomepage){
-        items.push({
-            label: getTranslation('context.visitHomepage'),
-            action: function(){
-                window.location.href = profileUrl;
-            }
-        });
-    }
-
-    menu.innerHTML = '';
-    items.forEach(function(item){
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'block w-full px-4 py-2 text-left text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800';
-        button.textContent = item.label;
+    buttons.forEach(function(button){
         button.addEventListener('click', function(){
-            item.action();
-            hideProjectCardContextMenu(menu);
+            const email = button.dataset.copyEmail;
+            if(!email){
+                return;
+            }
+
+            copyTextToClipboard(email);
+            button.textContent = getTranslation('context.emailCopied');
+
+            clearTimeout(button.copyResetTimeout);
+            button.copyResetTimeout = setTimeout(function(){
+                button.textContent = getTranslation('context.copyEmail');
+            }, 1600);
         });
-        menu.appendChild(button);
     });
-
-    menu.classList.remove('hidden');
-    const menuRect = menu.getBoundingClientRect();
-    const x = Math.min(event.clientX, window.innerWidth - menuRect.width - 8);
-    const y = Math.min(event.clientY, window.innerHeight - menuRect.height - 8);
-    menu.style.left = Math.max(8, x) + 'px';
-    menu.style.top = Math.max(8, y) + 'px';
-}
-
-function hideProjectCardContextMenu(menu){
-    if(menu){
-        menu.classList.add('hidden');
-    }
-}
-
-function isHomepageUrl(url){
-    if(!url){
-        return false;
-    }
-
-    return !url.startsWith('mailto:') && !url.startsWith('javascript:');
 }
 
 function copyTextToClipboard(text){
