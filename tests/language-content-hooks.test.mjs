@@ -67,9 +67,12 @@ assert.match(cardHomepage, /data-i18n="profile\.membership"/);
 assert.match(cardHomepage, /data-i18n="profile\.research"/);
 assert.match(card, /data-i18n="profile\.name"/);
 assert.match(cardHomepage, /data-i18n="profile\.name"/);
-assert.match(cardHomepage, /flex-nowrap/);
-assert.match(cardHomepage, /whitespace-nowrap/);
 assert.match(cardHomepage, /profile-name-role/);
+assert.match(cardHomepage, /md:grid-cols-\[minmax\(0,1\.3fr\)_minmax\(0,1fr\)_minmax\(0,1\.2fr\)\]/);
+assert.match(cardHomepage, /sm:flex-wrap/);
+assert.match(cardHomepage, /min-w-0/);
+assert.match(cardHomepage, /shrink-0/);
+assert.match(cardHomepage, /break-all/);
 
 assert.match(teamPage, /nameKey="\{instructors\.nameKey\}"/);
 assert.match(teamPage, /descriptionKey="\{instructors\.descriptionKey\}"/);

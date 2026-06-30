@@ -113,21 +113,21 @@ const translations = {
         'language.toggleToEnglish': '切换到英文',
         'language.current': '中文',
         'page.home.title': 'YangLi Lab - Your Dream Lab',
-        'page.about.title': '关于李杨',
+        'page.about.title': '个人介绍',
         'page.recruitment.title': '招生',
         'page.publish.title': '发表论文',
         'page.team.title': '团队',
         'page.posts.title': '文章',
         'home.title': 'Hi~ 欢迎来到 YangLi Lab。',
-        'home.intro': '<span class="font-semibold">YangLi Lab</span> 由李杨博士负责，聚焦医学图像分析与计算机辅助诊断方向的人工智能研究。',
+        'home.intro': '<span class="font-semibold">YangLi Lab</span> 由李杨老师负责，聚焦医学图像分析与计算机辅助诊断方向的人工智能研究。',
         'home.research.medicalImage': '医学图像处理与分析',
         'home.research.aiForScience': '科学智能',
         'home.research.diagnosis': '计算机辅助诊断',
         'home.research.deepLearning': '深度学习',
         'home.research.more': '更多研究方向 ....',
-        'home.values': '在这里了解我们的研究理念。',
-        'about.heading': '关于李杨',
-        'about.description': '你好 👋 这里是李杨博士的详细介绍。',
+        'home.values': '从这里了解我们的团队的价值观～',
+        'about.heading': '个人介绍',
+        'about.description': '你好 👋 这里是李杨老师的详细介绍。',
         'about.introduction.title': '个人简介',
         'about.introduction.body': '<p>李杨，中国科学院大学模式识别与智能系统专业工学博士，现为浙江理工大学计算机科学与技术学院（人工智能学院）副教授、硕士生导师，中国生物医学工程学会高级会员。</p><p>目前主持国家自然科学基金青年项目、浙江省基础公益研究计划项目、宁夏回族自治区重点研发计划子课题各1项，并参与国家重点研发计划项目1项、国家自然科学基金项目2项、浙江省重点研发计划项目1项。已发表 SCI/EI 论文20余篇，合著学术专著1部。</p>',
         'about.funds': '科研项目',
@@ -280,6 +280,7 @@ function applyLanguage(language){
     }
 
     updateLanguageToggle(selectedLanguage);
+    delete document.documentElement.dataset.languagePending;
 }
 
 function updateLanguageToggle(language){

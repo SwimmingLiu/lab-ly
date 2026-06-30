@@ -4,11 +4,17 @@ import fs from "node:fs";
 const layout = fs.readFileSync("layouts/main.html", "utf8");
 const header = fs.readFileSync("includes/header.html", "utf8");
 const pageHeading = fs.readFileSync("includes/page-heading.html", "utf8");
+const mainJs = fs.readFileSync("assets/js/main.js", "utf8");
 const menu = JSON.parse(fs.readFileSync("collections/menu.json", "utf8"));
 
 assert.match(layout, /site_language/);
 assert.match(layout, /document\.documentElement\.lang\s*=\s*'zh-CN'/);
 assert.match(layout, /document\.documentElement\.lang\s*=\s*'en'/);
+assert.match(layout, /document\.documentElement\.dataset\.languagePending\s*=\s*'true'/);
+assert.match(layout, /html\[data-language-pending="true"\] \[data-i18n\]/);
+assert.match(layout, /html\[data-language-pending="true"\] \[data-i18n-html\]/);
+
+assert.match(mainJs, /delete document\.documentElement\.dataset\.languagePending/);
 
 assert.match(header, /id="languageToggle"/);
 assert.match(header, /id="languageToggleText"/);

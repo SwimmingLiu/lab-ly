@@ -25,6 +25,7 @@
 
             if(getStoredValue('site_language') == 'zh'){
                 document.documentElement.lang = 'zh-CN';
+                document.documentElement.dataset.languagePending = 'true';
             } else {
                 document.documentElement.lang = 'en';
             }
@@ -34,6 +35,11 @@
     <style>
         .prose img{
             border-radius: 20px;
+        }
+
+        html[data-language-pending="true"] [data-i18n],
+        html[data-language-pending="true"] [data-i18n-html]{
+            visibility: hidden;
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/assets/images/YangLiLab-LOGO.png">
