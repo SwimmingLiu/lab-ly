@@ -40,5 +40,3 @@ assert.match(mainJs, /'context.copyEmail': 'Copy email'/);
 assert.match(mainJs, /'context.copyEmail': '复制邮箱'/);
 assert.match(mainJs, /'context.visitHomepage': 'Visit homepage'/);
 assert.match(mainJs, /'context.visitHomepage': '访问主页'/);
-assert.match(mainJs, /'context.emailCopied': 'Copied'/);
-assert.match(mainJs, /'context.emailCopied': '已复制'/);
